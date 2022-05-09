@@ -1,0 +1,96 @@
+/* Screen size for mobile: max 640px,
+Screen size for tablet: min 640.1 to max 767px,
+Screen size for desktop: min 767.1 to max infinity,
+*/
+/* Common designs */
+.features {
+    background-color: var(--lightGrayishBlue);
+}
+
+.features .feature_content .feature_intro {
+    margin-bottom: 60px;
+}
+
+.features .feature_content .feature_grid .feature_item {
+    padding: 15px;
+}
+
+/* Design for Desktop */
+@media only screen and (min-width: 767.1px) {
+    .features {
+        text-align: left;
+    }
+
+    .features .feature_content .feature_intro {
+        width: 60%;
+    }
+
+    .features .feature_content .feature_grid {
+        display: flex;
+    }
+
+    .features .feature_content .feature_grid .feature_item {
+        flex: 1;
+    }
+
+    .features .feature_content .feature_grid .feature_item .feature_icon {
+        margin-bottom: 44px;
+    }
+
+    .features .feature_content .feature_grid .feature_item .feature_title {
+        margin-bottom: 24px;
+        font-size: 24px;
+    }
+}
+
+/* design for tablets */
+@media only screen and (min-width: 640.1px) and (max-width: 767px) {
+    .features {
+        text-align: left;
+    }
+    .features .feature_content .feature_grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .features .feature_content .feature_grid .feature_item {
+        flex: 0 0 50%;
+    }
+
+    .features .feature_content .feature_grid .feature_item .feature_icon {
+        margin-bottom: 30px;
+    }
+
+    .features .feature_content .feature_grid .feature_item .feature_title {
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+
+}
+
+/* design for mobile */
+@media only screen and (max-width: 640px) {
+    .features {
+        text-align: center;
+    }
+    .features .feature_content .feature_grid .feature_item .feature_icon {
+        margin-bottom: 30px;
+    }
+
+    .features .feature_content .feature_grid .feature_item .feature_title {
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+}
+
+/* common features will not be overriden by media query */
+.features .feature_content .feature_grid .feature_item .feature_title {
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--darkBlue);
+}
+
+.features .feature_content .feature_grid .feature_item .feature_description {
+    font-size: 14px;
+    line-height: 1.5;
+}

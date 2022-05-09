@@ -1,0 +1,126 @@
+.hero {
+    background-color: var(--veryLightGray);
+}
+
+/* Design for Desktop */
+@media only screen and (min-width: 640.1px) {
+    .hero .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero_image {
+        flex: 3;
+        order: 2;
+        height: 655px;
+
+        /*background-position: left center; */
+    }
+
+    .hero_text {
+        flex: 2;
+        order: 1;
+        text-align: left;
+    }
+
+    .hero_text>h1 {
+        font-size: var(--fontXlg);
+    }
+
+    .hero_image::before {
+        width: 150%;
+        background-image: url('../../images/bg-intro-desktop.svg');
+        background-size: 122%;
+        background-position: 0% 83%;
+    }
+
+    .hero_image::after {
+        width: 120%;
+        height: 122%;
+        background-size: 94%;
+        background-position: center 150%;
+        left: 22%
+    }
+}
+/* Design for tablet */
+/* @media only screen and (min-width: 400.1px) and (max-width: 900px){
+    .hero_image {
+        min-height: 400px;
+        background-position: center 60%;
+    }
+
+    .hero_image::after
+     {
+        background-size: 52%;
+    }
+
+} */
+
+/* Design for mobile */
+@media only screen and (max-width: 640px) {
+    .hero_image {
+        background-image: url('../../images/bg-intro-mobile.svg');
+    }
+
+    .hero_text {
+        text-align: center;
+    }
+
+    .hero_text>h1 {
+        font-size: 37px;
+    }
+
+    .hero_image::before {
+        width: 100%;
+        background-size: 93%;
+        background-position: center bottom;
+    }
+
+    .hero_image::after {
+        height: 100%;
+        width: 100%;
+        background-size: 93%;
+        background-position: center bottom;
+    }
+}
+
+.hero_image {
+    position: relative;
+    /* background-image has been set by @media query based on screen size */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 280px;
+    background-position: center center;
+}
+
+.hero_image::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-repeat: no-repeat;
+
+    /* background-image: url('../../images/bg-intro-desktop.svg');
+     background-size: 93%;
+    background-position: center bottom; */
+
+}
+
+.hero_image::after {
+    content: "";
+    position: absolute;
+    background-image: url('../../images/image-mockups.png');
+    background-repeat: no-repeat;
+}
+
+/*  moved to global.css
+    .hero_text>h1 {
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--darkBlue);
+    margin-bottom: 24px;
+} 
+
+.hero_text>p {
+    line-height: 1.5;
+    margin-bottom: 36px;
+}*/

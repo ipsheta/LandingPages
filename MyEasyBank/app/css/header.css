@@ -1,0 +1,116 @@
+@import url(variables.css);
+
+.header>nav {
+    position: relative;
+    background: var(--white);
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.header_logo img {
+    width: 141px;
+    height: 22px;
+}
+
+/* mobile menu */
+.header_toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--darkBlue);
+    transition: all 300ms ease-in-out;
+    transform-origin: 3px 1px;
+}
+
+.header_toggle>span:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+/* show cross while hovering on hamburger menu:
+First line rotates to 45 deg, middle line fades
+and last line rotates to 45 deg 
+
+Note: Classes in same element would be written like .cls1.cls2 (without any space)
+      Subclass in class would be written like cls1.cls2 .subcls1(with a space before subclass)*/
+
+.header.open .header_toggle>span:first-child {
+    transform: rotate(45deg)
+}
+
+.header.open .header_toggle>span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header_toggle>span:last-child {
+    transform: rotate(-45deg)
+}
+
+/* properties added to 
+overlay with open class (now done with script.js)*/
+/* .header.open .overlay {
+    animation: fade_in 300ms ease-in-out forwards;
+} */
+
+/* properties of overlay without open class */
+.header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(var(--darkBlue), transparent);
+    /* animation: fade_out 300ms ease-in-out forwards; */
+}
+
+/* Mobile floating menu */
+.header_menu {
+    position: absolute;
+    width: calc(100% - 48px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    margin-top: 24px;
+    padding: 26px;
+    border-radius: 5px;
+}
+
+.header_menu>a {
+    display: block;
+    padding: 10px;
+    color: var(--darkBlue);
+    text-align: center;
+}
+
+.header_links>a {
+    position: relative;
+    font-size: var(--fontSmall);
+    color: var(--grayishBlue);
+    transition: color 300ms ease-in-out;
+}
+
+.header_links>a:not(:last-child) {
+    margin-right: 32px;
+}
+
+.header_links>a:hover {
+    color: var(--darkBlue);
+}
+
+.header_links>a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 5px;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    background: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+}
+
+.header_links>a:hover::before {
+    opacity: 1;
+}

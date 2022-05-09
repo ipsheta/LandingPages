@@ -1,0 +1,86 @@
+/* Grid layou has been used unlike flex in feature section.
+Desktop: 4 column, tablet: 2 column and mobile: 1 column */
+
+.articles {
+    background-color: var(--veryLightGray);
+}
+
+/* .articles .article_content {} */
+
+.articles .article_content .article_grid {
+    display: grid;
+    gap: 30px;
+}
+
+.articles .article_content .article_grid .article_item {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 150ms ease-in-out;
+}
+
+.articles .article_content .article_grid .article_item:hover {
+    transform: scale(1.05);
+}
+
+.articles .article_content .article_grid .article_item .article_image {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.articles .article_content .article_grid .article_item .article_text {
+    color: var(--grayishBlue);
+}
+
+.articles .article_content .article_grid .article_item .article_text .article_author {
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+.articles .article_content .article_grid .article_item .article_text .article_title {
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--darkBlue);
+    margin-bottom: 8px;
+}
+
+.articles .article_content .article_grid .article_item .article_text .article_description {
+    font-size: 13px;
+
+}
+
+/* Design for Desktop */
+@media only screen and (min-width: 767.1px) {
+    .articles .article_content .article_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .articles .article_content .article_grid .article_item .article_text {
+        padding: 30px 30px 40px 30px;
+    }
+}
+
+/* design for tablets */
+@media only screen and (min-width: 640.1px) and (max-width: 767px) {
+    .articles .article_content .article_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .articles .article_content .article_grid .article_item .article_text {
+        padding: 30px 25px;
+    }
+}
+
+/* design for mobile */
+@media only screen and (max-width: 640px) {
+    .articles .article_content .article_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articles .article_content .article_grid .article_item .article_text {
+        padding: 30px 30px 40px 30px;
+    }
+}
