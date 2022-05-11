@@ -75,6 +75,13 @@ overlay with open class (now done with script.js)*/
     border-radius: 5px;
 }
 
+/* Design for mobile */
+@media only screen and (max-width: 640px) {
+    .header_menu {
+        z-index: 1;
+    }
+}
+
 .header_menu>a {
     display: block;
     padding: 10px;
